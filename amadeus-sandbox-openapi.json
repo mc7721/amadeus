@@ -1,0 +1,68 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Amadeus Sandbox",
+        "description": "Travel Crunch Sandbox",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.amadeus.com\/v1.2"
+    ],
+    "paths": {
+        "\/products": {
+            "get": {
+                "summary": "airline",
+                "description": "This service retrieves the airline information corresponding to an IATA airline code.\n",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "IATA airline code for which further information is required."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Airline properties"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Airline": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "The IATA airline code that was requested.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the airline to be decoded.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "fields": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
