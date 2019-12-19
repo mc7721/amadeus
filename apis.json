@@ -1,0 +1,172 @@
+{
+    "name": "Amadeus",
+    "description": "Amadeus travel technology helps businesses connect to the global travel ecosystem, manage operations more effectively and serve travellers better than ever",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28139-sandbox-amadeus-com.jpg",
+    "tags": [
+        " rest",
+        "airlines",
+        "api provider",
+        "booking",
+        "booking api",
+        "general data",
+        "have api",
+        "have swagger",
+        "hotels",
+        "insurance api",
+        "json",
+        "marketplaces",
+        "profile",
+        "relative data",
+        "self service api",
+        "self-service api test envionment"
+    ],
+    "created": "2019-12-18",
+    "modified": "2019-12-18",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/amadeus\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Amadeus",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28139-sandbox-amadeus-com.jpg",
+            "humanURL": "http:\/\/developers.amadeus.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/amadeus.json"
+                }
+            ]
+        },
+        {
+            "name": "Amadeus Sandbox",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28139-sandbox-amadeus-com.jpg",
+            "humanURL": "http:\/\/developers.amadeus.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/amadeus-sandbox.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/developers.amadeus.com\/blog"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/amadeus"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/developers.amadeus.com\/self-service\/apis-docs"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/sandbox.amadeus.com\/api-catalog"
+        },
+        {
+            "type": "Facebook",
+            "url": "https:\/\/www.facebook.com\/AmadeusITGroup\/?fref=ts"
+        },
+        {
+            "type": "Getting Started",
+            "url": "https:\/\/developers.amadeus.com\/get-started\/category?id=79&durl=334&parentId=NaN"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/AmadeusITGroup"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-29-47.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-30-03.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-07-20-02.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-03-14-14-43.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-02-21-13-55.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-24-47.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-26-59.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-27-07.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-28-01.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28139-2019-09-04-00-28-55.json"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/developers.amadeus.com\/pricing"
+        },
+        {
+            "type": "Privacy",
+            "url": "https:\/\/developers.amadeus.com\/legal\/privacy-policy"
+        },
+        {
+            "type": "Privacy Policy",
+            "url": "http:\/\/www.amadeus.com\/web\/amadeus\/en_1A-corporate\/Amadeus-Home\/Amadeus_IT_Group_SA-Legal-notices-2014\/1319560218660-Page-AMAD_Detail_PopUp_Ppal?assetid=1319607040997&assettype=DataProtection_C"
+        },
+        {
+            "type": "Sandbox",
+            "url": "https:\/\/sandbox.amadeus.com"
+        },
+        {
+            "type": "Stack Overflow",
+            "url": "https:\/\/stackoverflow.com\/questions\/tagged\/amadeus"
+        },
+        {
+            "type": "Support",
+            "url": "https:\/\/developers.amadeus.com\/support"
+        },
+        {
+            "type": "Terms of Service",
+            "url": "http:\/\/www.amadeus.com\/web\/amadeus\/en_1A-corporate\/Amadeus-Home\/Amadeus_IT_Group_SA-Legal-notices-2014\/1319560218660-Page-AMAD_Detail_PopUp_Ppal?assetid=1319607040997&assettype=DataProtection_C"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/amadeusinnov"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/developers.amadeus.com"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/amadeus.com"
+        },
+        {
+            "type": "Youtube",
+            "url": "https:\/\/www.youtube.com\/user\/AmadeusITGroup"
+        }
+    ]
+}
