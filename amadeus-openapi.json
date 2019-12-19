@@ -1,0 +1,2466 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Amadeus",
+        "description": "Amadeus API is a toolkit designed for travel agencies who want to develop their own travel products rather than using off-the-shelf solutions. With this tool, you can build your very own customised applications that link in a stable and secure dialogue with our Global Distribution System (GDS).",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.sandbox.amadeus.com\/v1.2"
+    ],
+    "paths": {
+        "\/airports\/autocomplete": {
+            "get": {
+                "summary": "Get Airports Autocomplete",
+                "description": "Using the term parameter and given the start of any word in an airport's official name, a city name, or the start of an IATA code, this API provides the full name and IATA location code of the city or airport, for use in flight searches. Only major cities and civilian airports with several commercial flights per week are included by default. The response provides up to 20 possible matches, sorted by importance, in a JQuery UI Autocomplete compatible format. This sample implementation using JQuer",
+                "operationId": "GetAirportsAutocomplete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "query",
+                        "description": "Search keyword that should represent the start of a word in a city or airport name."
+                    },
+                    {
+                        "name": "country",
+                        "in": "query",
+                        "description": "Identified a country based of a <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_3166-2#Current_codes\">ISO 3166-1 alpha-2 code<\/a>"
+                    },
+                    {
+                        "name": "all_airports",
+                        "in": "query",
+                        "description": "Boolean to include or not all airports, no matter their traffic rank. False by default, to only display relevant airports."
+                    }
+                ]
+            }
+        },
+        "\/airports\/nearest-relevant": {
+            "get": {
+                "summary": "Get Airports Nearest Relevant",
+                "description": "This service gives the most relevant airports in a radius of 500 km around the given coordinates. The relevance of an airport is computed by dividing the number of airport movements (take offs and landings) by the distance from the point. This causes the relevance of an airport to increase exponentially as you approach it.\n\nTo minimize response time, all distances are computed as a great-circle distance from the provided coordinates to the airport coordinates, and thus do not take into account t",
+                "operationId": "GetAirportsNearestRelevant",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "description": "Latitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "description": "Longitude location to be at the center of your search circle."
+                    }
+                ]
+            }
+        },
+        "\/cars\/search-airport": {
+            "get": {
+                "summary": "Get Cars Search Airport",
+                "description": "With this API you can find out the price and type of car, for all car rental providers, near a specified airport.\n\nYou can quickly see the locations of car providers near a given airport, and what cars are available to rent, and at what prices. This API is based on our car pricing service that gets live availability from car providers, and is used to power a variety of airline and travel agency websites.\n           \nResults are validated from car providers, and thus response times may take up to",
+                "operationId": "GetCarsSearchAirport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "The <a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the airport at which the car will be rented."
+                    },
+                    {
+                        "name": "pick_up",
+                        "in": "query",
+                        "description": "Date on which the car rental will be collected from the car rental location. If no time is provided, a default value of 09:00 is used. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date."
+                    },
+                    {
+                        "name": "drop_off",
+                        "in": "query",
+                        "description": "Date at which the car rental will end and the car will be returned to the rental location. If no time is provided, a default value of 17:00 is used."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "provider",
+                        "in": "query",
+                        "description": "2 character car rental provider code. You may provide this parameter more than once. "
+                    },
+                    {
+                        "name": "rate_class",
+                        "in": "query",
+                        "description": "Allows to request specific rate types."
+                    },
+                    {
+                        "name": "rate_plan",
+                        "in": "query",
+                        "description": "Qualifies the rate depending on the pickup date and the rental duration."
+                    },
+                    {
+                        "name": "rate_filter",
+                        "in": "query",
+                        "description": "Defines the types of rates to be returned in the output"
+                    },
+                    {
+                        "name": "vehicle",
+                        "in": "query",
+                        "description": "Specifies the type of vehicle to be rented. If selected, the results set will include only vehicles that match these type descriptions. The enumerations above correspond to ACRISS Pseudo Codes, and you may also provide an ACRISS pseudo code directly. If specifying a vehicle-specific ACRISS code, you may provide this parameter up to 3 times."
+                    }
+                ]
+            }
+        },
+        "\/cars\/search-circle": {
+            "get": {
+                "summary": "Get Cars Search",
+                "description": "With this API you can find out the price and type of car, for all car rental providers, in a specified geographical location.\n\nYou can quickly see the locations of car providers near a given point, and what cars are available to rent, and at what prices. This API is based on our car pricing service that gets live availability from car providers, and is used to power a variety of airline and travel agency websites.\n           \nResults are validated from car providers, and thus response times may ",
+                "operationId": "GetCarsSearchCircle",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "description": "Latitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "description": "Longitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "Radius around the center to look for hotels in kilometers (km)."
+                    },
+                    {
+                        "name": "pick_up",
+                        "in": "query",
+                        "description": "Date on which the car rental will be collected from the car rental location. If no time is provided, a default value of 09:00 is used. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date."
+                    },
+                    {
+                        "name": "drop_off",
+                        "in": "query",
+                        "description": "Date at which the car rental will end and the car will be returned to the rental location. If no time is provided, a default value of 17:00 is used."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "provider",
+                        "in": "query",
+                        "description": "2 character car rental provider code. You may provide this parameter more than once. "
+                    },
+                    {
+                        "name": "rate_class",
+                        "in": "query",
+                        "description": "Allows to request specific rate types."
+                    },
+                    {
+                        "name": "rate_plan",
+                        "in": "query",
+                        "description": "Qualifies the rate depending on the pickup date and the rental duration."
+                    },
+                    {
+                        "name": "rate_filter",
+                        "in": "query",
+                        "description": "Defines the types of rates to be returned in the output"
+                    },
+                    {
+                        "name": "vehicle",
+                        "in": "query",
+                        "description": "Specifies the type of vehicle to be rented. If selected, the results set will include only vehicles that match these type descriptions. The enumerations above correspond to ACRISS Pseudo Codes, and you may also provide an ACRISS pseudo code directly. If specifying a vehicle-specific ACRISS code, you may provide this parameter up to 3 times."
+                    }
+                ]
+            }
+        },
+        "\/flights\/affiliate-search": {
+            "get": {
+                "summary": "Get Flights Affiliate Search",
+                "description": "The Flight Affiliate Search API combines Amadeus' flight search technology with Travel Audience's Connect API partners to provide a unique flight search, where all results come with deep-links to book the flight at a partner's website. The API will let you easily provide the traveler with a path to book flights from your application.\nTravel Audience Connect partners include\n\n  CityJet, Air Europa and TAP in Western Europe,\n  Ural Airlines in Russia, \n  Avianca Brazil  and\n  JAL in East Asia\n\n\nOn",
+                "operationId": "GetFlightsAffiliateSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "departure_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! "
+                    },
+                    {
+                        "name": "return_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the destination to return to the origin. If this parameter is not specified, the search will find only one-way trips. If this, or the return_by parameter are specified, only return trips are found"
+                    },
+                    {
+                        "name": "adults",
+                        "in": "query",
+                        "description": "The number of adult (age 12 and over) passengers traveling on this flight."
+                    },
+                    {
+                        "name": "children",
+                        "in": "query",
+                        "description": "The number of child (younger than age 12 on date of departure) passengers traveling on this flight who will each have their own separate seat"
+                    },
+                    {
+                        "name": "infants",
+                        "in": "query",
+                        "description": "The number of infant (younger than age 2 on date of departure) passengers traveling on this flight. Infants travel in the lap of an adult passenger, and thus the number of infants must not exceed the number of adults."
+                    },
+                    {
+                        "name": "include_merchants",
+                        "in": "query",
+                        "description": "If specified, all results will include at least one flight where one or more of these airlines is the marketing carrier. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>"
+                    },
+                    {
+                        "name": "exclude_merchants",
+                        "in": "query",
+                        "description": "If specified, no results will include any flights where any of these airlines is the marketing carrier. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>"
+                    },
+                    {
+                        "name": "max_price",
+                        "in": "query",
+                        "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "mobile",
+                        "in": "query",
+                        "description": "Setting this to true will show mobile web deeplinks "
+                    }
+                ]
+            }
+        },
+        "\/flights\/extensive-search": {
+            "get": {
+                "summary": "Get Flights Extensive Search",
+                "description": "The Extensive Flight Search allows you to find the prices of one-way or return flights between two airports over a large number of dates, and for a large variety of stay durations. The search doesn't return exact itineraries, but rather tells you the best price for a flight on a given day, for a stay of a given duration.\n\nThe search is based on our Extreme Search platform, which continually caches a large number of flight search results from a list of origin cities to a variety of destinations. ",
+                "operationId": "GetFlightsExtensiveSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "departure_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! "
+                    },
+                    {
+                        "name": "one",
+                        "in": "query",
+                        "description": "When set to true, the query will be for a single trip from the origin to the destination. When this parameter is not provided, or is set to false, the query is for a round trip from the origin to the destination and back again."
+                    },
+                    {
+                        "name": "duration",
+                        "in": "query",
+                        "description": "The allowed duration or range of durations of the trip, in days. This parameter must not be set if the one-way parameter is set to true."
+                    },
+                    {
+                        "name": "direct",
+                        "in": "query",
+                        "description": "Limit the search to results that do not require the passenger to change plane?"
+                    },
+                    {
+                        "name": "max_price",
+                        "in": "query",
+                        "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied"
+                    },
+                    {
+                        "name": "aggregation_mode",
+                        "in": "query",
+                        "description": "Specifies the granularity of results to be found. DAY is the default when one-way is true finds a result for departure date in the date range. STAY is the default otherwise and finds all round trip permutations for this route withim the given date range. DESTINATION finds one result, only the cheapest price for this route over the provided date range. WEEK finds the cheapest result for every week in the date range. Note that specifying a small granularity but a large search scope may result in a"
+                    }
+                ]
+            }
+        },
+        "\/flights\/inspiration-search": {
+            "get": {
+                "summary": "Get Flights Inspiration Search",
+                "description": "The Inspiration Flight Search allows you to find the prices of one-way and return flights from an origin city without necessarily having a destination, or even a flight date, in mind. The search doesn't return a distinct set of price options, but rather, can tell you the price of flying from a given city to some destination, for a trip of a given duration, that falls within a given date range.\n\nThe search is based on our Extreme Search platform, which continually caches a large number of flight ",
+                "operationId": "GetFlightsInspirationSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "departure_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! "
+                    },
+                    {
+                        "name": "one",
+                        "in": "query",
+                        "description": "When set to true, the query will be for a single trip from the origin to the destination. When this parameter is not provided, or is set to false, the query is for a round trip from the origin to the destination and back again."
+                    },
+                    {
+                        "name": "duration",
+                        "in": "query",
+                        "description": "The allowed duration or range of durations of the trip, in days. This parameter must not be set if the one-way parameter is set to true."
+                    },
+                    {
+                        "name": "direct",
+                        "in": "query",
+                        "description": "Limit the search to results that do not require the passenger to change plane?"
+                    },
+                    {
+                        "name": "max_price",
+                        "in": "query",
+                        "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied"
+                    },
+                    {
+                        "name": "aggregation_mode",
+                        "in": "query",
+                        "description": "Specifies the granularity of results to be found. DAY is the default when one-way is true finds a result for departure date in the date range. STAY is the default otherwise and finds all round trip permutations for this route withim the given date range. DESTINATION finds one result, only the cheapest price for this route over the provided date range. WEEK finds the cheapest result for every week in the date range. Note that specifying a small granularity but a large search scope may result in a"
+                    }
+                ]
+            }
+        },
+        "\/flights\/low-fare-search": {
+            "get": {
+                "summary": "Get Flights Low Fare Search",
+                "description": "This is the low fare search engine Amadeus uses to retrieve the best price for flights, based on our latest Master Pricer Travel Board technology. This document describes how to make a low fare search and how to handle the returned messages.\n\nThe message is composed of multiple results for given request. A result is defined by a unique combination of price, tax, passenger type, fare type, cabin, and availability for each requested segment. \n\nA result is then composed of single or multiple itiner",
+                "operationId": "GetFlightsLowFareSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "departure_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! "
+                    },
+                    {
+                        "name": "return_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the destination to return to the origin. If this parameter is not specified, the search will find only one-way trips. If this, or the return_by parameter are specified, only return trips are found"
+                    },
+                    {
+                        "name": "arrive_by",
+                        "in": "query",
+                        "description": "The datetime by which the outbound flight should arrive, based on local time at the destination airport.  Date-times are specified in the <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_8601\">ISO 8601<\/a> yyyy-MM-ddTHH:mm date format"
+                    },
+                    {
+                        "name": "return_by",
+                        "in": "query",
+                        "description": "The time by which the inbound flight should arrive, based on local time at the airport specified as the origin parameter"
+                    },
+                    {
+                        "name": "adults",
+                        "in": "query",
+                        "description": "The number of adult (age 12 and over) passengers traveling on this flight."
+                    },
+                    {
+                        "name": "children",
+                        "in": "query",
+                        "description": "The number of child (younger than age 12 on date of departure) passengers traveling on this flight who will each have their own separate seat"
+                    },
+                    {
+                        "name": "infants",
+                        "in": "query",
+                        "description": "The number of infant (younger than age 2 on date of departure) passengers traveling on this flight. Infants travel in the lap of an adult passenger, and thus the number of infants must not exceed the number of adults."
+                    },
+                    {
+                        "name": "include_airlines",
+                        "in": "query",
+                        "description": "If specified, all results will include at least one flight where one or more of these airlines is the marketing carrier. This behaves as an OR function. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>."
+                    },
+                    {
+                        "name": "exclude_airlines",
+                        "in": "query",
+                        "description": "If specified, no results will include any flights where any of these airlines is the marketing carrier. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>."
+                    },
+                    {
+                        "name": "nonstop",
+                        "in": "query",
+                        "description": "Setting this to true will find only flights that do not require the passenger to change from one flight to another"
+                    },
+                    {
+                        "name": "max_price",
+                        "in": "query",
+                        "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "travel_class",
+                        "in": "query",
+                        "description": "Searches for results where the majority of the itinerary flight time should be in a the specified cabin class or higher"
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    }
+                ]
+            }
+        },
+        "\/hotels\/search-airport": {
+            "get": {
+                "summary": "Get Hotels Search Airport",
+                "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels near a given airport.\n\nThis API allows you to quickly see the locations of hotels near a given airport, and what prices in that area look like. Note that hotel images are not available to users outside of Amadeus, as we are not licensed to redistribute them. The API is based on our high-spe",
+                "operationId": "GetHotelsSearchAirport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "The <a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the airport at which the car will be rented."
+                    },
+                    {
+                        "name": "check_in",
+                        "in": "query",
+                        "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date."
+                    },
+                    {
+                        "name": "check_out",
+                        "in": "query",
+                        "description": "Date on which the guest will end their stay in the hotel."
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "Radius around the center to look for hotels in kilometers (km)."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "chain",
+                        "in": "query",
+                        "description": "Narrows the hotel search to a given hotel provider. The hotel chain is indicated by the first two characters of the property code."
+                    },
+                    {
+                        "name": "max_rate",
+                        "in": "query",
+                        "description": "The maximum amount per night that any hotel in the shopping response should cost. This is calculated by dividing the total price of the stay for the given dates by the number of nights specified falling between the check_in and check_out dates."
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    },
+                    {
+                        "name": "all_rooms",
+                        "in": "query",
+                        "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned."
+                    },
+                    {
+                        "name": "show_sold_out",
+                        "in": "query",
+                        "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)"
+                    },
+                    {
+                        "name": "amenity",
+                        "in": "query",
+                        "description": "Hotel <a href=\"hotels-api-supported-amenities-filter\">amenities filter<\/a> to search narrow down hotels with certain amenities. For example&colon; amenity=POOL. (Note: multiple amenities can be used in searches: amenity=PARKING&amenity=RESTAURANT&amenity=PETS_ALLOWED).\n"
+                    }
+                ]
+            }
+        },
+        "\/hotels\/search-box": {
+            "get": {
+                "summary": "Get Hotels Search Box",
+                "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels within a specified geographical region.\n\nThis API allows you to quickly see the hotel locations in a region, and what prices in that area look like,  as well as the check-in and check-out dates, and get a list of up to 140 properties (names, codes, image, amenities) with their locations and",
+                "operationId": "GetHotelsSearchBox",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "south_west_corner",
+                        "in": "query",
+                        "description": "The coordinates of the south-west corner of the search box."
+                    },
+                    {
+                        "name": "north_east_corner",
+                        "in": "query",
+                        "description": "The coordinates of the north-east corner of the search box."
+                    },
+                    {
+                        "name": "check_in",
+                        "in": "query",
+                        "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date."
+                    },
+                    {
+                        "name": "check_out",
+                        "in": "query",
+                        "description": "Date on which the guest will end their stay in the hotel."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "chain",
+                        "in": "query",
+                        "description": "Narrows the hotel search to a given hotel provider. The hotel chain is indicated by the first two characters of the property code."
+                    },
+                    {
+                        "name": "max_rate",
+                        "in": "query",
+                        "description": "The maximum amount per night that any hotel in the shopping response should cost. This is calculated by dividing the total price of the stay for the given dates by the number of nights specified falling between the check_in and check_out dates."
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    },
+                    {
+                        "name": "all_rooms",
+                        "in": "query",
+                        "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned."
+                    },
+                    {
+                        "name": "show_sold_out",
+                        "in": "query",
+                        "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)"
+                    },
+                    {
+                        "name": "amenity",
+                        "in": "query",
+                        "description": "Hotel <a href=\"hotels-api-supported-amenities-filter\">amenities filter<\/a> to search narrow down hotels with certain amenities. For example&colon; amenity=POOL. (Note: multiple amenities can be used in searches: amenity=PARKING&amenity=RESTAURANT&amenity=PETS_ALLOWED).\n"
+                    }
+                ]
+            }
+        },
+        "\/hotels\/search-circle": {
+            "get": {
+                "summary": "Get Hotels Search Circle",
+                "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels within a specified radius of a point.\n\nThis API allows you to quickly see the hotel locations in a region, and what prices in that area look like,  as well as the check-in and check-out dates, and get list of up to 140 properties (names, codes, image, amenities) with their locations and rat",
+                "operationId": "GetHotelsSearchCircle",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "description": "Latitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "description": "Longitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "Radius around the center to look for hotels in kilometers (km)."
+                    },
+                    {
+                        "name": "check_in",
+                        "in": "query",
+                        "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date."
+                    },
+                    {
+                        "name": "check_out",
+                        "in": "query",
+                        "description": "Date on which the guest will end their stay in the hotel."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "chain",
+                        "in": "query",
+                        "description": "Narrows the hotel search to a given hotel provider. The hotel chain is indicated by the first two characters of the property code."
+                    },
+                    {
+                        "name": "max_rate",
+                        "in": "query",
+                        "description": "The maximum amount per night that any hotel in the shopping response should cost. This is calculated by dividing the total price of the stay for the given dates by the number of nights specified falling between the check_in and check_out dates."
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    },
+                    {
+                        "name": "all_rooms",
+                        "in": "query",
+                        "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned."
+                    },
+                    {
+                        "name": "show_sold_out",
+                        "in": "query",
+                        "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)"
+                    },
+                    {
+                        "name": "amenity",
+                        "in": "query",
+                        "description": "Hotel <a href=\"hotels-api-supported-amenities-filter\">amenities filter<\/a> to search narrow down hotels with certain amenities. For example&colon; amenity=POOL. (Note: multiple amenities can be used in searches: amenity=PARKING&amenity=RESTAURANT&amenity=PETS_ALLOWED).\n"
+                    }
+                ]
+            }
+        },
+        "\/hotels\/{property_code}": {
+            "get": {
+                "summary": "Get Hotels Property Code",
+                "description": "This API allows you to quickly see the detailed information of a single hotel, including descriptions, address, GPS location, amenities, awards, lowest priced room and all room prices and booking information. \n\nThis API gives you more information on a specific property. Optional parameters such as show_sold_out & rooms can be used to show sold out rooms and all available rooms. \n\nThe API is based on our high-speed hotel pricing cache, which is also used to power the Amadeus Hotel Search Engine a",
+                "operationId": "GetHotelsPropertyCode",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "property_code",
+                        "in": "path",
+                        "description": "A Hotel property code based on 2 letter chain code + 3 letter <a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city + 3 char property unique id."
+                    },
+                    {
+                        "name": "check_in",
+                        "in": "query",
+                        "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date."
+                    },
+                    {
+                        "name": "check_out",
+                        "in": "query",
+                        "description": "Date on which the guest will end their stay in the hotel."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental."
+                    },
+                    {
+                        "name": "all_rooms",
+                        "in": "query",
+                        "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned."
+                    },
+                    {
+                        "name": "show_sold_out",
+                        "in": "query",
+                        "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)"
+                    }
+                ]
+            }
+        },
+        "\/location\/{code}": {
+            "get": {
+                "summary": "Get Location Code",
+                "description": "This service retrieves the location information corresponding to a IATA city or airport code.\n\nWhen provided with an IATA code, the service determines whether this code could relate to a city code, an airport code or both. If the city could contain multiple airports, it will return all possible airports that correspond to that city code.\n\nThis API is based on the Amadeus supported Geobases open-source project. If you wish to make your own database with all IATA location information, in order to ",
+                "operationId": "GetLocationCode",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "path",
+                        "description": "IATA location code for which further information is required"
+                    }
+                ]
+            }
+        },
+        "\/points-of-interest\/yapq-search-circle": {
+            "get": {
+                "summary": "Get Points Of Interest Yapq Search Circle",
+                "description": "Amadeus has partnered with YapQ to bring you point of interest APIs with the goal of offering you unbiased ratings of landmarks and tourist attractions. YapQ rates places according to their interest on social media and provides Wikipedia content and Geonames ID at a given location. \nYapQ's service indexes millions of points around the world, and provides content in 12 different languages. This allows you to ensure you catch the must-see sights at a specific YapQ supported location.\nEach point of",
+                "operationId": "GetPointsOfInterestYapqSearchCircle",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "description": "Latitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "description": "Longitude location to be at the center of your search circle."
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "Radius around the center to look for hotels in kilometers (km)."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "Filters the resulting points_of_interest to include only results which have a least one category containing the given provided word. Good examples are <em>museum<\/em>, <em>landmark<\/em> or <em>church<\/em>"
+                    },
+                    {
+                        "name": "geonames",
+                        "in": "query",
+                        "description": "Setting this to true includes only points of interest with a geonames ID"
+                    },
+                    {
+                        "name": "vibes",
+                        "in": "query",
+                        "description": "Includes content that doesn't correspond to an active physical place, but which gives the user some background information, or <em>vibe<\/em> for the place they are visiting. An example of this may be information on an influential demolished building that used to exist at a certain location, or more information on a district of the city"
+                    },
+                    {
+                        "name": "social_media",
+                        "in": "query",
+                        "description": "Enabling this includes images from Instagram in the output results. This is disabled by default, since these images are often just pictures of people or food, which often have little relevance to the actual location"
+                    },
+                    {
+                        "name": "image_size",
+                        "in": "query",
+                        "description": "The size of the images you'd like to see in the response"
+                    },
+                    {
+                        "name": "number_of_images",
+                        "in": "query",
+                        "description": "Number of images to display."
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    }
+                ]
+            }
+        },
+        "\/points-of-interest\/yapq-search-text": {
+            "get": {
+                "summary": "Get Points Of Interest Yapq Search Text",
+                "description": "Amadeus has partnered with YapQ to bring you point of interest APIs with the goal of offering you unbiased ratings of landmarks and tourist attractions. YapQ rates these points according to their interest on social media and provides Wikipedia content and Geonames ID in a given city. \nYapQ's service indexes millions of points around the world, and provides content in 12 different languages. This allows you to ensure you catch the must-see sights in a YapQ supported city.\nEach point of interest c",
+                "operationId": "GetPointsOfInterestYapqSearchText",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "city_name",
+                        "in": "query",
+                        "description": "The name of the <a href=\"http:\/\/yapq.io\/cities.txt\">supported city<\/a> for which you are searching, in the selected language."
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available."
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "Filters the resulting points_of_interest to include only results which have a least one category containing the given provided word. Good examples are <em>museum<\/em>, <em>landmark<\/em> or <em>church<\/em>"
+                    },
+                    {
+                        "name": "geonames",
+                        "in": "query",
+                        "description": "Setting this to true includes only points of interest with a geonames ID"
+                    },
+                    {
+                        "name": "vibes",
+                        "in": "query",
+                        "description": "Includes content that doesn't correspond to an active physical place, but which gives the user some background information, or <em>vibe<\/em> for the place they are visiting. An example of this may be information on an influential demolished building that used to exist at a certain location, or more information on a district of the city"
+                    },
+                    {
+                        "name": "social_media",
+                        "in": "query",
+                        "description": "Enabling this includes images from Instagram in the output results. This is disabled by default, since these images are often just pictures of people or food, which often have little relevance to the actual location"
+                    },
+                    {
+                        "name": "image_size",
+                        "in": "query",
+                        "description": "The size of the images you'd like to see in the response"
+                    },
+                    {
+                        "name": "number_of_images",
+                        "in": "query",
+                        "description": "Number of images to display."
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    }
+                ]
+            }
+        },
+        "\/rail-station\/{id}": {
+            "get": {
+                "summary": "Get Rail Station",
+                "description": "Get rail station",
+                "operationId": "GetRailStation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Station ID for which further information is required."
+                    }
+                ]
+            }
+        },
+        "\/rail-stations\/autocomplete": {
+            "get": {
+                "summary": "Get Rail Stations Autocomplete",
+                "description": "Given the start of any word in a rail station's official name, as a term, this API provides the full name and rail station ID of a rail station for use in searches. The response provides an array of up to 20 possible matches, sorted by passenger traffic, in a JQuery Autocomplete compatible format.\n\nThe value returned is the UIC station code. The label returned is always in UTF-8 format, with the station's official name (which is often in the native language). Agglomeration station codes may also",
+                "operationId": "GetRailStationsAutocomplete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "query",
+                        "description": "Search keyword that should represent the start of a word in a city or airport name."
+                    }
+                ]
+            }
+        },
+        "\/trains\/extensive-search": {
+            "get": {
+                "summary": "Get Trains Extensive Search",
+                "description": "This API allows you to search trains availability and prices for a single day or date range. It's based on our Rail Instant Search technology, providing you with immediate results from our rail search cache.\n\nThis API has content from SNCF (French trains).\n            \nThe content is also restricted to single-leg trips - where a single train takes you directly from the origin to the destination.\n",
+                "operationId": "GetTrainsExtensiveSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "departure_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! "
+                    }
+                ]
+            }
+        },
+        "\/trains\/schedule-search": {
+            "get": {
+                "summary": "Get Trains Schedule Search",
+                "description": "This API allows you to find all the possible destinations in the Rail Instant Search cache (used by Extensive Search above) from a given origin station on a given day. You can use this to help build network maps, journey planners or provide inspiration for rail travel.\n\nThis API has continuous content from SNCF.\nAll the options returned are single-leg trips - where a single train takes you directly from the origin to the destination. In general, only departure dates up to 90 days in the future a",
+                "operationId": "GetTrainsScheduleSearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "departure_date",
+                        "in": "query",
+                        "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! "
+                    }
+                ]
+            }
+        },
+        "\/travel-intelligence\/flight-traffic": {
+            "get": {
+                "summary": "Get Travel Intelligence Flight Traffic",
+                "description": "The Flight Traffic API lets you find the origin and destination traffic summary between two journey points over a specified period.\nThe search returns number of flights & travelers for each origin and destination, ordered by popularity, for each month specified within the search period. This search can help you answer questions like \"Where are people from Los Angeles traveling to between January and April of 2015?\" or \"Which is the most popular month for New Yorkers to travel last year?\". \nThis ",
+                "operationId": "GetTravelIntelligenceFlightTraffic",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "Range of periods for which flight traffic information is required. Ranges are inclusive and ranges of months will apply from the start to the end of the month. If just a single period is specified, only that period will be displayed. Only periods from 2011-01 up to previous month of the current year are valid. Future periods are not supported."
+                    },
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "number_of_results_per_period",
+                        "in": "query",
+                        "description": "The maximum number of destinations to return for each period. Destinations are ordered by dates and number of travelers. The maximum number of destinations per period returned is 50"
+                    }
+                ]
+            }
+        },
+        "\/travel-intelligence\/top-destinations": {
+            "get": {
+                "summary": "Get Travel Intelligence Top Destinations",
+                "description": "The Top Flight Destinations API lets you find the most popular flight destinations from an origin during a period. This can help you answer questions like \"Where are most people from Paris going to during the month of September?\" The API is based on estimated flight traffic summary data from two journey points over a specific period. It returns up to 50 results, ordered by popularity, showing number of travelers as well as number of flights.\n\nThis estimated search is based on Amadeus' Travel Int",
+                "operationId": "GetTravelIntelligenceTopDestinations",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "Range of periods for which flight traffic information is required. Ranges are inclusive and ranges of months will apply from the start to the end of the month. If just a single period is specified, only that period will be displayed. Only periods from 2011-01 up to previous month of the current year are valid. Future periods are not supported."
+                    },
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    }
+                ]
+            }
+        },
+        "\/travel-intelligence\/top-searches": {
+            "get": {
+                "summary": "Get Travel Intelligence Top Searches",
+                "description": "The Top Flight Search allows you to find number of estimated searches from an origin, optionally a destination, within a time period when travelers are performing the searches. \nThe search is based on queries performed from within a country (also refers to as market) and returns up to 50 results, ordered by popularity, showing number of searches for most searched destination with its previous year comparison. This search also shows patterns on how travelers are searching for flights, revealing w",
+                "operationId": "GetTravelIntelligenceTopSearches",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "period",
+                        "in": "query",
+                        "description": "Range of periods for which flight traffic information is required. Ranges are inclusive and ranges of months will apply from the start to the end of the month. If just a single period is specified, only that period will be displayed. Only periods from 2011-01 up to previous month of the current year are valid. Future periods are not supported."
+                    },
+                    {
+                        "name": "origin",
+                        "in": "query",
+                        "description": "City code from which the traveler will depart. See the location and airport interfaces for more information."
+                    },
+                    {
+                        "name": "destination",
+                        "in": "query",
+                        "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going"
+                    },
+                    {
+                        "name": "country",
+                        "in": "query",
+                        "description": "Identified a country based of a <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_3166-2#Current_codes\">ISO 3166-1 alpha-2 code<\/a>"
+                    },
+                    {
+                        "name": "number_of_results",
+                        "in": "query",
+                        "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed."
+                    }
+                ]
+            }
+        },
+        "\/travel-record\/{record_locator}": {
+            "get": {
+                "summary": "Get Travel Record Record Locator",
+                "description": "Note: This API requires the use of HTTPS\n\nThis service retrieves a travel record (also sometimes referred to as a PNR) for a given journey when provided with Record Locator to identify a travel record, along with the last name of any traveler who is marked as a passenger on this record.\n\nThe API provides detailed information on a given record, including any air, car, hotel or rail reservations, as well as passenger details, and contact frequent traveler information for each passenger when availa",
+                "operationId": "GetTravelRecordRecordLocator",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "record_locator",
+                        "in": "path",
+                        "description": "The Amadeus identifier of the given travel record. Usually printed at the top of an itinerary or boarding pass."
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "query",
+                        "description": "The last name of any traveler in this record, as written on their identification used for travel. This is required to ensure that applications retrieving the record are acting on behalf of the customer."
+                    },
+                    {
+                        "name": "env",
+                        "in": "query",
+                        "description": "Indicates the Amadeus system from which this record should be retrieved."
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "line1": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "postal_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "region": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AffiliateFlightSearchPrice": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_price": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AffiliatePayout": {
+                "type": "object"
+            },
+            "AffiliateSearchMeta": {
+                "type": "object"
+            },
+            "AffiliateSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AffiliateSearchResult": {
+                "type": "object",
+                "properties": {
+                    "airline": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "deep_link": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Airport": {
+                "type": "object",
+                "properties": {
+                    "airport": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "terminal": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AirportAutocompleteResponse": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AirportInformation": {
+                "type": "object",
+                "properties": {
+                    "aircraft_movements": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Amenity": {
+                "type": "object",
+                "properties": {
+                    "amenity": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ota_code": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Amount": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Award": {
+                "type": "object",
+                "properties": {
+                    "provider": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rating": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CarReservation": {
+                "type": "object",
+                "properties": {
+                    "drop_off": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "origin": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "pick_up": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traveler_ids": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CarReservationBookingInfo": {
+                "type": "object",
+                "properties": {
+                    "reservation_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CarSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CarSearchResult": {
+                "type": "object",
+                "properties": {
+                    "airport": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cars": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CarrierInfo": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CityInformation": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "geonames_ID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Company": {
+                "type": "object",
+                "properties": {
+                    "company_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "company_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Contact": {
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purpose": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "more_info": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ExtensiveTrainSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ExtensiveTrainSearchResult": {
+                "type": "object",
+                "properties": {
+                    "itineraries": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ExtremeSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "origin": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ExtremeSearchResult": {
+                "type": "object",
+                "properties": {
+                    "airline": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "departure_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "price": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "return_date": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Fare": {
+                "type": "object",
+                "properties": {
+                    "tax": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_fare": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FareRestrictions": {
+                "type": "object",
+                "properties": {
+                    "change_penalties": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refundable": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Fees": {
+                "type": "object",
+                "properties": {
+                    "creditcard_fees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "service_fees": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightReservationBookingInfo": {
+                "type": "object",
+                "properties": {
+                    "airline_record_locator": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "booking_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "travel_class": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightReservationBound": {
+                "type": "object",
+                "properties": {
+                    "flights": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightReservationSegment": {
+                "type": "object",
+                "properties": {
+                    "arrives_at": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "departs_at": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "flight_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "marketing_airline": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "operating_airline": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traveler_ids": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightSearchBookingInfo": {
+                "type": "object",
+                "properties": {
+                    "booking_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cabin_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fare_basis": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fare_family": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "seats_remaining": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "travel_class": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightSearchBound": {
+                "type": "object",
+                "properties": {
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "flights": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightSearchItinerary": {
+                "type": "object"
+            },
+            "FlightSearchPrice": {
+                "type": "object",
+                "properties": {
+                    "total_price": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightSearchSegment": {
+                "type": "object",
+                "properties": {
+                    "aircraft": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "arrives_at": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "departs_at": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "flight_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "marketing_airline": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "operating_airline": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightTicket": {
+                "type": "object",
+                "properties": {
+                    "flight_bounds": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traveler_ids": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FlightTrafficSearchResult": {
+                "type": "object",
+                "properties": {
+                    "destination": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "flights": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "period": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "travelers": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "FrequentTravelerCard": {
+                "type": "object",
+                "properties": {
+                    "card_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "company_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "issuer_type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Geolocation": {
+                "type": "object",
+                "properties": {
+                    "google_maps_link": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "latitude": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "longitude": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HotelPropertyResponse": {
+                "type": "object",
+                "properties": {
+                    "amenities": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "awards": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "contacts": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "images": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "property_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "property_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rooms": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HotelReservation": {
+                "type": "object",
+                "properties": {
+                    "check_in": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "check_out": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "property_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "property_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traveler_ids": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HotelReservationBookingInfo": {
+                "type": "object",
+                "properties": {
+                    "reservation_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HotelRoom": {
+                "type": "object",
+                "properties": {
+                    "booking_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "descriptions": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rate_plan_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rate_type_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rates": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "room_type_code": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HotelSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Image": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "width": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ImageSize": {
+                "type": "object"
+            },
+            "Infant": {
+                "type": "object",
+                "properties": {
+                    "date_of_birth": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "first_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "last_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Link": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "LocationResponse": {
+                "type": "object",
+                "properties": {
+                    "airports": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Logos": {
+                "type": "object",
+                "properties": {
+                    "medium": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "small": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "LowFareSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "LowFareSearchResult": {
+                "type": "object",
+                "properties": {
+                    "itineraries": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Message": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "severity": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "NearestAirport": {
+                "type": "object",
+                "properties": {
+                    "aircraft_movements": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "airport": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "airport_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "distance": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OtherReservation": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traveler_ids": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OtherReservationBookingInfo": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PeriodRate": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "price": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_date": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PointOfInterestCity": {
+                "type": "object",
+                "properties": {
+                    "geoname_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_points_of_interest": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PointOfInterestDetails": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "short_description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "wiki_page_link": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PointOfInterestResult": {
+                "type": "object",
+                "properties": {
+                    "categories": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "contextual_images": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "geoname_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "grades": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "main_image": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "walk_time": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PointsOfInterestResponse": {
+                "type": "object",
+                "properties": {
+                    "points_of_interest": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RailService": {
+                "type": "object",
+                "properties": {
+                    "destination_station_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "services": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RailStationAutocompleteResponse": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RailStationResponse": {
+                "type": "object",
+                "properties": {
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "short_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traffic": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Rate": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Reservation": {
+                "type": "object",
+                "properties": {
+                    "cars": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "hotels": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "others": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unticketed_flights": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RestrictedRate": {
+                "type": "object",
+                "properties": {
+                    "rate_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rate_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "restrictions": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RoomInfo": {
+                "type": "object",
+                "properties": {
+                    "bed_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "number_of_beds": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "room_type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Station": {
+                "type": "object",
+                "properties": {
+                    "station_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "station_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TopDestinationsSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "origin": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "period": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TopDestinationsSearchResult": {
+                "type": "object",
+                "properties": {
+                    "destination": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "flights": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "travelers": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TopSearchesSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "destination": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "market": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "origin": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "period": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TopSearchesSearchResult": {
+                "type": "object",
+                "properties": {
+                    "destination": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "searches": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "searches_prior_year": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainScheduleSearchResponse": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainScheduleSearchResult": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "origin_station_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "services": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainSearchItinerary": {
+                "type": "object",
+                "properties": {
+                    "trains": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainSearchPricing": {
+                "type": "object",
+                "properties": {
+                    "accomodation": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "booking_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "service_class": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainSearchSegment": {
+                "type": "object",
+                "properties": {
+                    "arrives_at": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "departs_at": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "marketing_company": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "operating_company": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "prices": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "train_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "train_type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TravelRecordHeader": {
+                "type": "object",
+                "properties": {
+                    "creation_office_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "owner_office_id": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TravelRecordResponse": {
+                "type": "object",
+                "properties": {
+                    "messages": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "record_locator": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "travelers": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Traveler": {
+                "type": "object",
+                "properties": {
+                    "contacts": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_of_birth": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "first_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "frequent_traveler_cards": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "last_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "traveler_type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Vehicle": {
+                "type": "object",
+                "properties": {
+                    "images": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rates": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "VehicleInfo": {
+                "type": "object",
+                "properties": {
+                    "acriss_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "air_conditioning": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "category": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fuel": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transmission": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
