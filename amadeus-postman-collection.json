@@ -1,0 +1,1671 @@
+{
+    "id": "35255e2bfadd6c926ed13e3ef9941f2e",
+    "name": "Amadeus",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "4df2761bc199936645f863288e5e9484",
+            "name": "Get Airports Autocomplete",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/airports\/autocomplete",
+            "description": "Using the term parameter and given the start of any word in an airport's official name, a city name, or the start of an IATA code, this API provides the full name and IATA location code of the city or airport, for use in flight searches. Only major cities and civilian airports with several commercial flights per week are included by default. The response provides up to 20 possible matches, sorted by importance, in a JQuery UI Autocomplete compatible format. This sample implementation using JQuer",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "term",
+                    "description": "Search keyword that should represent the start of a word in a city or airport name.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "country",
+                    "description": "Identified a country based of a <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_3166-2#Current_codes\">ISO 3166-1 alpha-2 code<\/a>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_airports",
+                    "description": "Boolean to include or not all airports, no matter their traffic rank. False by default, to only display relevant airports.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "c725a3428bc4715dc98285a6ba452414",
+            "name": "Get Airports Nearest Relevant",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/airports\/nearest-relevant",
+            "description": "This service gives the most relevant airports in a radius of 500 km around the given coordinates. The relevance of an airport is computed by dividing the number of airport movements (take offs and landings) by the distance from the point. This causes the relevance of an airport to increase exponentially as you approach it.\n\nTo minimize response time, all distances are computed as a great-circle distance from the provided coordinates to the airport coordinates, and thus do not take into account t",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "latitude",
+                    "description": "Latitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "longitude",
+                    "description": "Longitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "999214dd7b8c48248c34c6c0f66a8107",
+            "name": "Get Cars Search Airport",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/cars\/search-airport",
+            "description": "With this API you can find out the price and type of car, for all car rental providers, near a specified airport.\n\nYou can quickly see the locations of car providers near a given airport, and what cars are available to rent, and at what prices. This API is based on our car pricing service that gets live availability from car providers, and is used to power a variety of airline and travel agency websites.\n           \nResults are validated from car providers, and thus response times may take up to",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "location",
+                    "description": "The <a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the airport at which the car will be rented.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pick_up",
+                    "description": "Date on which the car rental will be collected from the car rental location. If no time is provided, a default value of 09:00 is used. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "drop_off",
+                    "description": "Date at which the car rental will end and the car will be returned to the rental location. If no time is provided, a default value of 17:00 is used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "provider",
+                    "description": "2 character car rental provider code. You may provide this parameter more than once. ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rate_class",
+                    "description": "Allows to request specific rate types.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rate_plan",
+                    "description": "Qualifies the rate depending on the pickup date and the rental duration.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rate_filter",
+                    "description": "Defines the types of rates to be returned in the output",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "vehicle",
+                    "description": "Specifies the type of vehicle to be rented. If selected, the results set will include only vehicles that match these type descriptions. The enumerations above correspond to ACRISS Pseudo Codes, and you may also provide an ACRISS pseudo code directly. If specifying a vehicle-specific ACRISS code, you may provide this parameter up to 3 times.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "a291d95d9b60b890175cac3545200106",
+            "name": "Get Cars Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/cars\/search-circle",
+            "description": "With this API you can find out the price and type of car, for all car rental providers, in a specified geographical location.\n\nYou can quickly see the locations of car providers near a given point, and what cars are available to rent, and at what prices. This API is based on our car pricing service that gets live availability from car providers, and is used to power a variety of airline and travel agency websites.\n           \nResults are validated from car providers, and thus response times may ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "latitude",
+                    "description": "Latitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "longitude",
+                    "description": "Longitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "radius",
+                    "description": "Radius around the center to look for hotels in kilometers (km).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "pick_up",
+                    "description": "Date on which the car rental will be collected from the car rental location. If no time is provided, a default value of 09:00 is used. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "drop_off",
+                    "description": "Date at which the car rental will end and the car will be returned to the rental location. If no time is provided, a default value of 17:00 is used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "provider",
+                    "description": "2 character car rental provider code. You may provide this parameter more than once. ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rate_class",
+                    "description": "Allows to request specific rate types.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rate_plan",
+                    "description": "Qualifies the rate depending on the pickup date and the rental duration.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rate_filter",
+                    "description": "Defines the types of rates to be returned in the output",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "vehicle",
+                    "description": "Specifies the type of vehicle to be rented. If selected, the results set will include only vehicles that match these type descriptions. The enumerations above correspond to ACRISS Pseudo Codes, and you may also provide an ACRISS pseudo code directly. If specifying a vehicle-specific ACRISS code, you may provide this parameter up to 3 times.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "3d7538a9d5228012b3d70f4df493c6f3",
+            "name": "Get Flights Affiliate Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/affiliate-search",
+            "description": "The Flight Affiliate Search API combines Amadeus' flight search technology with Travel Audience's Connect API partners to provide a unique flight search, where all results come with deep-links to book the flight at a partner's website. The API will let you easily provide the traveler with a path to book flights from your application.\nTravel Audience Connect partners include\n\n  CityJet, Air Europa and TAP in Western Europe,\n  Ural Airlines in Russia, \n  Avianca Brazil  and\n  JAL in East Asia\n\n\nOn",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "departure_date",
+                    "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "return_date",
+                    "description": "The date on which the traveler will depart from the destination to return to the origin. If this parameter is not specified, the search will find only one-way trips. If this, or the return_by parameter are specified, only return trips are found",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "adults",
+                    "description": "The number of adult (age 12 and over) passengers traveling on this flight.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "children",
+                    "description": "The number of child (younger than age 12 on date of departure) passengers traveling on this flight who will each have their own separate seat",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "infants",
+                    "description": "The number of infant (younger than age 2 on date of departure) passengers traveling on this flight. Infants travel in the lap of an adult passenger, and thus the number of infants must not exceed the number of adults.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_merchants",
+                    "description": "If specified, all results will include at least one flight where one or more of these airlines is the marketing carrier. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "exclude_merchants",
+                    "description": "If specified, no results will include any flights where any of these airlines is the marketing carrier. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_price",
+                    "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "mobile",
+                    "description": "Setting this to true will show mobile web deeplinks ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "868731382ad698918c8df5cdc26b7515",
+            "name": "Get Flights Extensive Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/extensive-search",
+            "description": "The Extensive Flight Search allows you to find the prices of one-way or return flights between two airports over a large number of dates, and for a large variety of stay durations. The search doesn't return exact itineraries, but rather tells you the best price for a flight on a given day, for a stay of a given duration.\n\nThe search is based on our Extreme Search platform, which continually caches a large number of flight search results from a list of origin cities to a variety of destinations. ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "departure_date",
+                    "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "one",
+                    "description": "When set to true, the query will be for a single trip from the origin to the destination. When this parameter is not provided, or is set to false, the query is for a round trip from the origin to the destination and back again.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "duration",
+                    "description": "The allowed duration or range of durations of the trip, in days. This parameter must not be set if the one-way parameter is set to true.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "direct",
+                    "description": "Limit the search to results that do not require the passenger to change plane?",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_price",
+                    "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "aggregation_mode",
+                    "description": "Specifies the granularity of results to be found. DAY is the default when one-way is true finds a result for departure date in the date range. STAY is the default otherwise and finds all round trip permutations for this route withim the given date range. DESTINATION finds one result, only the cheapest price for this route over the provided date range. WEEK finds the cheapest result for every week in the date range. Note that specifying a small granularity but a large search scope may result in a",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "4e89149ee820f1e9d84cad678ab50405",
+            "name": "Get Flights Inspiration Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/inspiration-search",
+            "description": "The Inspiration Flight Search allows you to find the prices of one-way and return flights from an origin city without necessarily having a destination, or even a flight date, in mind. The search doesn't return a distinct set of price options, but rather, can tell you the price of flying from a given city to some destination, for a trip of a given duration, that falls within a given date range.\n\nThe search is based on our Extreme Search platform, which continually caches a large number of flight ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "departure_date",
+                    "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "one",
+                    "description": "When set to true, the query will be for a single trip from the origin to the destination. When this parameter is not provided, or is set to false, the query is for a round trip from the origin to the destination and back again.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "duration",
+                    "description": "The allowed duration or range of durations of the trip, in days. This parameter must not be set if the one-way parameter is set to true.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "direct",
+                    "description": "Limit the search to results that do not require the passenger to change plane?",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_price",
+                    "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "aggregation_mode",
+                    "description": "Specifies the granularity of results to be found. DAY is the default when one-way is true finds a result for departure date in the date range. STAY is the default otherwise and finds all round trip permutations for this route withim the given date range. DESTINATION finds one result, only the cheapest price for this route over the provided date range. WEEK finds the cheapest result for every week in the date range. Note that specifying a small granularity but a large search scope may result in a",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "97387ed76d1d8aeab73e3c6ec06a0f00",
+            "name": "Get Flights Low Fare Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/low-fare-search",
+            "description": "This is the low fare search engine Amadeus uses to retrieve the best price for flights, based on our latest Master Pricer Travel Board technology. This document describes how to make a low fare search and how to handle the returned messages.\n\nThe message is composed of multiple results for given request. A result is defined by a unique combination of price, tax, passenger type, fare type, cabin, and availability for each requested segment. \n\nA result is then composed of single or multiple itiner",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "departure_date",
+                    "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "return_date",
+                    "description": "The date on which the traveler will depart from the destination to return to the origin. If this parameter is not specified, the search will find only one-way trips. If this, or the return_by parameter are specified, only return trips are found",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "arrive_by",
+                    "description": "The datetime by which the outbound flight should arrive, based on local time at the destination airport.  Date-times are specified in the <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_8601\">ISO 8601<\/a> yyyy-MM-ddTHH:mm date format",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "return_by",
+                    "description": "The time by which the inbound flight should arrive, based on local time at the airport specified as the origin parameter",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "adults",
+                    "description": "The number of adult (age 12 and over) passengers traveling on this flight.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "children",
+                    "description": "The number of child (younger than age 12 on date of departure) passengers traveling on this flight who will each have their own separate seat",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "infants",
+                    "description": "The number of infant (younger than age 2 on date of departure) passengers traveling on this flight. Infants travel in the lap of an adult passenger, and thus the number of infants must not exceed the number of adults.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_airlines",
+                    "description": "If specified, all results will include at least one flight where one or more of these airlines is the marketing carrier. This behaves as an OR function. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "exclude_airlines",
+                    "description": "If specified, no results will include any flights where any of these airlines is the marketing carrier. Airlines are specified using <a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\"><a href=\"https:\/\/en.wikipedia.org\/wiki\/Airline_codes\">IATA airline code<\/a>s<\/a>.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nonstop",
+                    "description": "Setting this to true will find only flights that do not require the passenger to change from one flight to another",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_price",
+                    "description": "Maximum price of trips to find in the result set, in USD (US dollars) unless some other currency code is specified. By default, no limit is applied",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "travel_class",
+                    "description": "Searches for results where the majority of the itinerary flight time should be in a the specified cabin class or higher",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "7de8525adda1cd34da31832f8554ff0c",
+            "name": "Get Hotels Search Airport",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/search-airport",
+            "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels near a given airport.\n\nThis API allows you to quickly see the locations of hotels near a given airport, and what prices in that area look like. Note that hotel images are not available to users outside of Amadeus, as we are not licensed to redistribute them. The API is based on our high-spe",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "location",
+                    "description": "The <a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the airport at which the car will be rented.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_in",
+                    "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_out",
+                    "description": "Date on which the guest will end their stay in the hotel.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "radius",
+                    "description": "Radius around the center to look for hotels in kilometers (km).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "chain",
+                    "description": "Narrows the hotel search to a given hotel provider. The hotel chain is indicated by the first two characters of the property code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_rate",
+                    "description": "The maximum amount per night that any hotel in the shopping response should cost. This is calculated by dividing the total price of the stay for the given dates by the number of nights specified falling between the check_in and check_out dates.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_rooms",
+                    "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "show_sold_out",
+                    "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "amenity",
+                    "description": "Hotel <a href=\"hotels-api-supported-amenities-filter\">amenities filter<\/a> to search narrow down hotels with certain amenities. For example&colon; amenity=POOL. (Note: multiple amenities can be used in searches: amenity=PARKING&amenity=RESTAURANT&amenity=PETS_ALLOWED).\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "8b6ce96dc4caacd567c06faf387b675e",
+            "name": "Get Hotels Search Box",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/search-box",
+            "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels within a specified geographical region.\n\nThis API allows you to quickly see the hotel locations in a region, and what prices in that area look like,  as well as the check-in and check-out dates, and get a list of up to 140 properties (names, codes, image, amenities) with their locations and",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "south_west_corner",
+                    "description": "The coordinates of the south-west corner of the search box.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "north_east_corner",
+                    "description": "The coordinates of the north-east corner of the search box.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_in",
+                    "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_out",
+                    "description": "Date on which the guest will end their stay in the hotel.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "chain",
+                    "description": "Narrows the hotel search to a given hotel provider. The hotel chain is indicated by the first two characters of the property code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_rate",
+                    "description": "The maximum amount per night that any hotel in the shopping response should cost. This is calculated by dividing the total price of the stay for the given dates by the number of nights specified falling between the check_in and check_out dates.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_rooms",
+                    "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "show_sold_out",
+                    "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "amenity",
+                    "description": "Hotel <a href=\"hotels-api-supported-amenities-filter\">amenities filter<\/a> to search narrow down hotels with certain amenities. For example&colon; amenity=POOL. (Note: multiple amenities can be used in searches: amenity=PARKING&amenity=RESTAURANT&amenity=PETS_ALLOWED).\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "6b93bf313d3a2772a2760a16568ca77b",
+            "name": "Get Hotels Search Circle",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/search-circle",
+            "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels within a specified radius of a point.\n\nThis API allows you to quickly see the hotel locations in a region, and what prices in that area look like,  as well as the check-in and check-out dates, and get list of up to 140 properties (names, codes, image, amenities) with their locations and rat",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "latitude",
+                    "description": "Latitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "longitude",
+                    "description": "Longitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "radius",
+                    "description": "Radius around the center to look for hotels in kilometers (km).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_in",
+                    "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_out",
+                    "description": "Date on which the guest will end their stay in the hotel.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "chain",
+                    "description": "Narrows the hotel search to a given hotel provider. The hotel chain is indicated by the first two characters of the property code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_rate",
+                    "description": "The maximum amount per night that any hotel in the shopping response should cost. This is calculated by dividing the total price of the stay for the given dates by the number of nights specified falling between the check_in and check_out dates.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_rooms",
+                    "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "show_sold_out",
+                    "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "amenity",
+                    "description": "Hotel <a href=\"hotels-api-supported-amenities-filter\">amenities filter<\/a> to search narrow down hotels with certain amenities. For example&colon; amenity=POOL. (Note: multiple amenities can be used in searches: amenity=PARKING&amenity=RESTAURANT&amenity=PETS_ALLOWED).\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "62b5fc64c2c44f932890d0ffb8d5ccf2",
+            "name": "Get Hotels Property Code",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/{property_code}",
+            "description": "This API allows you to quickly see the detailed information of a single hotel, including descriptions, address, GPS location, amenities, awards, lowest priced room and all room prices and booking information. \n\nThis API gives you more information on a specific property. Optional parameters such as show_sold_out & rooms can be used to show sold out rooms and all available rooms. \n\nThe API is based on our high-speed hotel pricing cache, which is also used to power the Amadeus Hotel Search Engine a",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "property_code",
+                    "description": "A Hotel property code based on 2 letter chain code + 3 letter <a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city + 3 char property unique id.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_in",
+                    "description": "Date on which the guest will begin their stay in the hotel. Past availability is not displayed, future availability becomes less useful from about 6 months from the current date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "check_out",
+                    "description": "Date on which the guest will end their stay in the hotel.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency",
+                    "description": "The preferred <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_4217\">currency<\/a> to use when displaying prices and rates related to the car rental.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "all_rooms",
+                    "description": "This option if enabled will return all hotel room rates, not just the lowest room rate. Note: This will have an impact on the response time due to the larger messages returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "show_sold_out",
+                    "description": "This option if enabled will return hotel names and addresses even if rooms are sold out (closed properties)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "17debbd9acf27a251d5aa63af7be0c3a",
+            "name": "Get Location Code",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/location\/{code}",
+            "description": "This service retrieves the location information corresponding to a IATA city or airport code.\n\nWhen provided with an IATA code, the service determines whether this code could relate to a city code, an airport code or both. If the city could contain multiple airports, it will return all possible airports that correspond to that city code.\n\nThis API is based on the Amadeus supported Geobases open-source project. If you wish to make your own database with all IATA location information, in order to ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "code",
+                    "description": "IATA location code for which further information is required",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "6f395be53eb644028838809dfe79ca6b",
+            "name": "Get Points Of Interest Yapq Search Circle",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/points-of-interest\/yapq-search-circle",
+            "description": "Amadeus has partnered with YapQ to bring you point of interest APIs with the goal of offering you unbiased ratings of landmarks and tourist attractions. YapQ rates places according to their interest on social media and provides Wikipedia content and Geonames ID at a given location. \nYapQ's service indexes millions of points around the world, and provides content in 12 different languages. This allows you to ensure you catch the must-see sights at a specific YapQ supported location.\nEach point of",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "latitude",
+                    "description": "Latitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "longitude",
+                    "description": "Longitude location to be at the center of your search circle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "radius",
+                    "description": "Radius around the center to look for hotels in kilometers (km).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "category",
+                    "description": "Filters the resulting points_of_interest to include only results which have a least one category containing the given provided word. Good examples are <em>museum<\/em>, <em>landmark<\/em> or <em>church<\/em>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "geonames",
+                    "description": "Setting this to true includes only points of interest with a geonames ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "vibes",
+                    "description": "Includes content that doesn't correspond to an active physical place, but which gives the user some background information, or <em>vibe<\/em> for the place they are visiting. An example of this may be information on an influential demolished building that used to exist at a certain location, or more information on a district of the city",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "social_media",
+                    "description": "Enabling this includes images from Instagram in the output results. This is disabled by default, since these images are often just pictures of people or food, which often have little relevance to the actual location",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "image_size",
+                    "description": "The size of the images you'd like to see in the response",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_images",
+                    "description": "Number of images to display.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "53ac146d44b3aea3819f250ca4d4473a",
+            "name": "Get Points Of Interest Yapq Search Text",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/points-of-interest\/yapq-search-text",
+            "description": "Amadeus has partnered with YapQ to bring you point of interest APIs with the goal of offering you unbiased ratings of landmarks and tourist attractions. YapQ rates these points according to their interest on social media and provides Wikipedia content and Geonames ID in a given city. \nYapQ's service indexes millions of points around the world, and provides content in 12 different languages. This allows you to ensure you catch the must-see sights in a YapQ supported city.\nEach point of interest c",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "city_name",
+                    "description": "The name of the <a href=\"http:\/\/yapq.io\/cities.txt\">supported city<\/a> for which you are searching, in the selected language.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lang",
+                    "description": "The preferred language of the content related to each car rental. Content will be returned in this language if available.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "category",
+                    "description": "Filters the resulting points_of_interest to include only results which have a least one category containing the given provided word. Good examples are <em>museum<\/em>, <em>landmark<\/em> or <em>church<\/em>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "geonames",
+                    "description": "Setting this to true includes only points of interest with a geonames ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "vibes",
+                    "description": "Includes content that doesn't correspond to an active physical place, but which gives the user some background information, or <em>vibe<\/em> for the place they are visiting. An example of this may be information on an influential demolished building that used to exist at a certain location, or more information on a district of the city",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "social_media",
+                    "description": "Enabling this includes images from Instagram in the output results. This is disabled by default, since these images are often just pictures of people or food, which often have little relevance to the actual location",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "image_size",
+                    "description": "The size of the images you'd like to see in the response",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_images",
+                    "description": "Number of images to display.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "b2a1c7d56c7a97218350e2e88fd9c29b",
+            "name": "Get Rail Station",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/rail-station\/{id}",
+            "description": "Get rail station",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Station ID for which further information is required.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "c5b95c112fab692d90834e04109378e1",
+            "name": "Get Rail Stations Autocomplete",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/rail-stations\/autocomplete",
+            "description": "Given the start of any word in a rail station's official name, as a term, this API provides the full name and rail station ID of a rail station for use in searches. The response provides an array of up to 20 possible matches, sorted by passenger traffic, in a JQuery Autocomplete compatible format.\n\nThe value returned is the UIC station code. The label returned is always in UTF-8 format, with the station's official name (which is often in the native language). Agglomeration station codes may also",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "term",
+                    "description": "Search keyword that should represent the start of a word in a city or airport name.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "4fe9fae95edd6480d5abda5292f20eb0",
+            "name": "Get Trains Extensive Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/trains\/extensive-search",
+            "description": "This API allows you to search trains availability and prices for a single day or date range. It's based on our Rail Instant Search technology, providing you with immediate results from our rail search cache.\n\nThis API has content from SNCF (French trains).\n            \nThe content is also restricted to single-leg trips - where a single train takes you directly from the origin to the destination.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "departure_date",
+                    "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "53245392cdbf991dc92ccc1b6e43119c",
+            "name": "Get Trains Schedule Search",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/trains\/schedule-search",
+            "description": "This API allows you to find all the possible destinations in the Rail Instant Search cache (used by Extensive Search above) from a given origin station on a given day. You can use this to help build network maps, journey planners or provide inspiration for rail travel.\n\nThis API has continuous content from SNCF.\nAll the options returned are single-leg trips - where a single train takes you directly from the origin to the destination. In general, only departure dates up to 90 days in the future a",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "departure_date",
+                    "description": "The date on which the traveler will depart from the origin to go to the destination. The maximum scope for a date range is 2 days, for a larger scope, use the Extensive Search! ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "a5d09d8cc403dd01eba89695a3b123f1",
+            "name": "Get Travel Intelligence Flight Traffic",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-intelligence\/flight-traffic",
+            "description": "The Flight Traffic API lets you find the origin and destination traffic summary between two journey points over a specified period.\nThe search returns number of flights & travelers for each origin and destination, ordered by popularity, for each month specified within the search period. This search can help you answer questions like \"Where are people from Los Angeles traveling to between January and April of 2015?\" or \"Which is the most popular month for New Yorkers to travel last year?\". \nThis ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "period",
+                    "description": "Range of periods for which flight traffic information is required. Ranges are inclusive and ranges of months will apply from the start to the end of the month. If just a single period is specified, only that period will be displayed. Only periods from 2011-01 up to previous month of the current year are valid. Future periods are not supported.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results_per_period",
+                    "description": "The maximum number of destinations to return for each period. Destinations are ordered by dates and number of travelers. The maximum number of destinations per period returned is 50",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "08caacea16c11582aa43acca6148d377",
+            "name": "Get Travel Intelligence Top Destinations",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-intelligence\/top-destinations",
+            "description": "The Top Flight Destinations API lets you find the most popular flight destinations from an origin during a period. This can help you answer questions like \"Where are most people from Paris going to during the month of September?\" The API is based on estimated flight traffic summary data from two journey points over a specific period. It returns up to 50 results, ordered by popularity, showing number of travelers as well as number of flights.\n\nThis estimated search is based on Amadeus' Travel Int",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "period",
+                    "description": "Range of periods for which flight traffic information is required. Ranges are inclusive and ranges of months will apply from the start to the end of the month. If just a single period is specified, only that period will be displayed. Only periods from 2011-01 up to previous month of the current year are valid. Future periods are not supported.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "7eae401ad47c53a3666feb92678d8ae2",
+            "name": "Get Travel Intelligence Top Searches",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-intelligence\/top-searches",
+            "description": "The Top Flight Search allows you to find number of estimated searches from an origin, optionally a destination, within a time period when travelers are performing the searches. \nThe search is based on queries performed from within a country (also refers to as market) and returns up to 50 results, ordered by popularity, showing number of searches for most searched destination with its previous year comparison. This search also shows patterns on how travelers are searching for flights, revealing w",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "period",
+                    "description": "Range of periods for which flight traffic information is required. Ranges are inclusive and ranges of months will apply from the start to the end of the month. If just a single period is specified, only that period will be displayed. Only periods from 2011-01 up to previous month of the current year are valid. Future periods are not supported.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "origin",
+                    "description": "City code from which the traveler will depart. See the location and airport interfaces for more information.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "destination",
+                    "description": "<a href=\"https:\/\/en.wikipedia.org\/wiki\/International_Air_Transport_Association_airport_code\">IATA code<\/a> of the city to which the traveler is going",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "country",
+                    "description": "Identified a country based of a <a href=\"https:\/\/en.wikipedia.org\/wiki\/ISO_3166-2#Current_codes\">ISO 3166-1 alpha-2 code<\/a>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "number_of_results",
+                    "description": "The number of results to display. This will not be strictly interpreted but used as a guideline to display a useful number of results. By default, the number of results is dynamically determined. A maximum of 250 results will be displayed.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        },
+        {
+            "id": "4b74433d7b4809e5628d40298163949c",
+            "name": "Get Travel Record Record Locator",
+            "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-record\/{record_locator}",
+            "description": "Note: This API requires the use of HTTPS\n\nThis service retrieves a travel record (also sometimes referred to as a PNR) for a given journey when provided with Record Locator to identify a travel record, along with the last name of any traveler who is marked as a passenger on this record.\n\nThe API provides detailed information on a given record, including any air, car, hotel or rail reservations, as well as passenger details, and contact frequent traveler information for each passenger when availa",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "record_locator",
+                    "description": "The Amadeus identifier of the given travel record. Usually printed at the top of an itinerary or boarding pass.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "last_name",
+                    "description": "The last name of any traveler in this record, as written on their identification used for travel. This is required to ensure that applications retrieving the record are acting on behalf of the customer.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "env",
+                    "description": "Indicates the Amadeus system from which this record should be retrieved.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "35255e2bfadd6c926ed13e3ef9941f2e",
+            "rawModeData": ""
+        }
+    ]
+}
