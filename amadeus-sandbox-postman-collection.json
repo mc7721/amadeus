@@ -1,5 +1,5 @@
 {
-    "id": "a04ed509062812f6266734270ea92aca",
+    "id": "2662624fb6a005126a0ad654806f0d72",
     "name": "Amadeus Sandbox",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "b06955a206f93abc5d85944e618d82f1",
+            "id": "e8b34ddc129c20a8a8f91cf392ceee23",
             "name": "airline",
             "url": "http:\/\/api.amadeus.com\/v1.2\/products",
             "description": "This service retrieves the airline information corresponding to an IATA airline code.\n",
@@ -37,7 +37,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a04ed509062812f6266734270ea92aca",
+            "collectionId": "2662624fb6a005126a0ad654806f0d72",
             "rawModeData": ""
         }
     ]
