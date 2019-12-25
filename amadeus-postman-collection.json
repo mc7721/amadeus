@@ -1,5 +1,5 @@
 {
-    "id": "8ca76b5a1912c0cf90d13b4af0835979",
+    "id": "98e65694edbcc319b161f644e388234e",
     "name": "Amadeus",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "7704cd4c8351e5e16322fcea7675f4a3",
+            "id": "52b75872a422944d36d51460735a8513",
             "name": "Get Airports Autocomplete",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/airports\/autocomplete",
             "description": "Using the term parameter and given the start of any word in an airport's official name, a city name, or the start of an IATA code, this API provides the full name and IATA location code of the city or airport, for use in flight searches. Only major cities and civilian airports with several commercial flights per week are included by default. The response provides up to 20 possible matches, sorted by importance, in a JQuery UI Autocomplete compatible format. This sample implementation using JQuer",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "52abcaf048e03706af7fe08b6722013e",
+            "id": "0ea6da8c513acebb843c1f122645b262",
             "name": "Get Airports Nearest Relevant",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/airports\/nearest-relevant",
             "description": "This service gives the most relevant airports in a radius of 500 km around the given coordinates. The relevance of an airport is computed by dividing the number of airport movements (take offs and landings) by the distance from the point. This causes the relevance of an airport to increase exponentially as you approach it.\n\nTo minimize response time, all distances are computed as a great-circle distance from the provided coordinates to the airport coordinates, and thus do not take into account t",
@@ -89,11 +89,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "9e765ce3efd5766a337c540cf078ac68",
+            "id": "0c89bc8f946967d629f8779fe8585113",
             "name": "Get Cars Search Airport",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/cars\/search-airport",
             "description": "With this API you can find out the price and type of car, for all car rental providers, near a specified airport.\n\nYou can quickly see the locations of car providers near a given airport, and what cars are available to rent, and at what prices. This API is based on our car pricing service that gets live availability from car providers, and is used to power a variety of airline and travel agency websites.\n           \nResults are validated from car providers, and thus response times may take up to",
@@ -183,11 +183,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "b09be014f6441aa016e26056c49e79b0",
+            "id": "527e0354358a0e6cd3a1a4d5512bac9f",
             "name": "Get Cars Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/cars\/search-circle",
             "description": "With this API you can find out the price and type of car, for all car rental providers, in a specified geographical location.\n\nYou can quickly see the locations of car providers near a given point, and what cars are available to rent, and at what prices. This API is based on our car pricing service that gets live availability from car providers, and is used to power a variety of airline and travel agency websites.\n           \nResults are validated from car providers, and thus response times may ",
@@ -291,11 +291,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "6a987187efc7cef6533372631edefb90",
+            "id": "8e105c2e03431db6e40c40b51fdd0c53",
             "name": "Get Flights Affiliate Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/affiliate-search",
             "description": "The Flight Affiliate Search API combines Amadeus' flight search technology with Travel Audience's Connect API partners to provide a unique flight search, where all results come with deep-links to book the flight at a partner's website. The API will let you easily provide the traveler with a path to book flights from your application.\nTravel Audience Connect partners include\n\n  CityJet, Air Europa and TAP in Western Europe,\n  Ural Airlines in Russia, \n  Avianca Brazil  and\n  JAL in East Asia\n\n\nOn",
@@ -399,11 +399,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "66e895a6702eb9cd1dcab62928a8a3ab",
+            "id": "fbdaac4be2dc26a642e72662ddbd2ad8",
             "name": "Get Flights Extensive Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/extensive-search",
             "description": "The Extensive Flight Search allows you to find the prices of one-way or return flights between two airports over a large number of dates, and for a large variety of stay durations. The search doesn't return exact itineraries, but rather tells you the best price for a flight on a given day, for a stay of a given duration.\n\nThe search is based on our Extreme Search platform, which continually caches a large number of flight search results from a list of origin cities to a variety of destinations. ",
@@ -479,11 +479,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "f36c5b3ab808ffac12d6df4e6c844be3",
+            "id": "5b60913f900af725787fa3da55bd875d",
             "name": "Get Flights Inspiration Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/inspiration-search",
             "description": "The Inspiration Flight Search allows you to find the prices of one-way and return flights from an origin city without necessarily having a destination, or even a flight date, in mind. The search doesn't return a distinct set of price options, but rather, can tell you the price of flying from a given city to some destination, for a trip of a given duration, that falls within a given date range.\n\nThe search is based on our Extreme Search platform, which continually caches a large number of flight ",
@@ -559,11 +559,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "5aa014599449d5dd83ccfd24bfa228b8",
+            "id": "e4fe06894fb15f7fc987df216fe756e0",
             "name": "Get Flights Low Fare Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/flights\/low-fare-search",
             "description": "This is the low fare search engine Amadeus uses to retrieve the best price for flights, based on our latest Master Pricer Travel Board technology. This document describes how to make a low fare search and how to handle the returned messages.\n\nThe message is composed of multiple results for given request. A result is defined by a unique combination of price, tax, passenger type, fare type, cabin, and availability for each requested segment. \n\nA result is then composed of single or multiple itiner",
@@ -695,11 +695,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "4e94826229bd1745ccfb85cccb8dbb9d",
+            "id": "759cd1860fae65096f9a74b02a851533",
             "name": "Get Hotels Search Airport",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/search-airport",
             "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels near a given airport.\n\nThis API allows you to quickly see the locations of hotels near a given airport, and what prices in that area look like. Note that hotel images are not available to users outside of Amadeus, as we are not licensed to redistribute them. The API is based on our high-spe",
@@ -803,11 +803,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "2e71d1026856efc741d98dd4316c8a89",
+            "id": "ba0bf6c42dc189ce54661e1721fd4148",
             "name": "Get Hotels Search Box",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/search-box",
             "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels within a specified geographical region.\n\nThis API allows you to quickly see the hotel locations in a region, and what prices in that area look like,  as well as the check-in and check-out dates, and get a list of up to 140 properties (names, codes, image, amenities) with their locations and",
@@ -911,11 +911,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "94da743ff9974794abd8c5e689279dfa",
+            "id": "a228e49831d908b027a2dd8d14323459",
             "name": "Get Hotels Search Circle",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/search-circle",
             "description": "A fast Hotel shopping API to see which hotels are available in a given area, on a given day and displays their lowest prices. With this API you can find out the price of the cheapest daily rate for all hotels within a specified radius of a point.\n\nThis API allows you to quickly see the hotel locations in a region, and what prices in that area look like,  as well as the check-in and check-out dates, and get list of up to 140 properties (names, codes, image, amenities) with their locations and rat",
@@ -1026,11 +1026,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "1acfa31fa9aa79ad46f047c23bc41956",
+            "id": "56b0f92be5240aa09cdd810f43b5409f",
             "name": "Get Hotels Property Code",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/hotels\/{property_code}",
             "description": "This API allows you to quickly see the detailed information of a single hotel, including descriptions, address, GPS location, amenities, awards, lowest priced room and all room prices and booking information. \n\nThis API gives you more information on a specific property. Optional parameters such as show_sold_out & rooms can be used to show sold out rooms and all available rooms. \n\nThe API is based on our high-speed hotel pricing cache, which is also used to power the Amadeus Hotel Search Engine a",
@@ -1099,11 +1099,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "537c2522cf90bbd9def1c3449842c6e5",
+            "id": "dd0be8c239ec6e1f7dd39daf7df9626e",
             "name": "Get Location Code",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/location\/{code}",
             "description": "This service retrieves the location information corresponding to a IATA city or airport code.\n\nWhen provided with an IATA code, the service determines whether this code could relate to a city code, an airport code or both. If the city could contain multiple airports, it will return all possible airports that correspond to that city code.\n\nThis API is based on the Amadeus supported Geobases open-source project. If you wish to make your own database with all IATA location information, in order to ",
@@ -1130,11 +1130,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "1649a0cd5ae54a924aa153ddfd2245cb",
+            "id": "6486d4029ea724dd26b6ac3263d618da",
             "name": "Get Points Of Interest Yapq Search Circle",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/points-of-interest\/yapq-search-circle",
             "description": "Amadeus has partnered with YapQ to bring you point of interest APIs with the goal of offering you unbiased ratings of landmarks and tourist attractions. YapQ rates places according to their interest on social media and provides Wikipedia content and Geonames ID at a given location. \nYapQ's service indexes millions of points around the world, and provides content in 12 different languages. This allows you to ensure you catch the must-see sights at a specific YapQ supported location.\nEach point of",
@@ -1231,11 +1231,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "7670067ad10371a7b78a9f1cbf4595d2",
+            "id": "124ca0619fd5a86cdee0a0de0b8f2cc9",
             "name": "Get Points Of Interest Yapq Search Text",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/points-of-interest\/yapq-search-text",
             "description": "Amadeus has partnered with YapQ to bring you point of interest APIs with the goal of offering you unbiased ratings of landmarks and tourist attractions. YapQ rates these points according to their interest on social media and provides Wikipedia content and Geonames ID in a given city. \nYapQ's service indexes millions of points around the world, and provides content in 12 different languages. This allows you to ensure you catch the must-see sights in a YapQ supported city.\nEach point of interest c",
@@ -1318,11 +1318,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "fe5e8fec91b3d6151bdd1c3c355ffab0",
+            "id": "8ece6e46622181367a7e43272fbaefd5",
             "name": "Get Rail Station",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/rail-station\/{id}",
             "description": "Get rail station",
@@ -1349,11 +1349,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "dce2cd1afdaefd24114c35f80ac95d88",
+            "id": "2466b1a97dad570771a5b73a47b2606c",
             "name": "Get Rail Stations Autocomplete",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/rail-stations\/autocomplete",
             "description": "Given the start of any word in a rail station's official name, as a term, this API provides the full name and rail station ID of a rail station for use in searches. The response provides an array of up to 20 possible matches, sorted by passenger traffic, in a JQuery Autocomplete compatible format.\n\nThe value returned is the UIC station code. The label returned is always in UTF-8 format, with the station's official name (which is often in the native language). Agglomeration station codes may also",
@@ -1380,11 +1380,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "4694cef2114baa1b48e6631dfce11ef8",
+            "id": "a22a26843f49993fc3a8bd0963a60d9f",
             "name": "Get Trains Extensive Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/trains\/extensive-search",
             "description": "This API allows you to search trains availability and prices for a single day or date range. It's based on our Rail Instant Search technology, providing you with immediate results from our rail search cache.\n\nThis API has content from SNCF (French trains).\n            \nThe content is also restricted to single-leg trips - where a single train takes you directly from the origin to the destination.\n",
@@ -1425,11 +1425,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "b851d1d2950c2bb4734ed43d0d9ad202",
+            "id": "58beed7d403a0fac1fe567a25dd9a858",
             "name": "Get Trains Schedule Search",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/trains\/schedule-search",
             "description": "This API allows you to find all the possible destinations in the Rail Instant Search cache (used by Extensive Search above) from a given origin station on a given day. You can use this to help build network maps, journey planners or provide inspiration for rail travel.\n\nThis API has continuous content from SNCF.\nAll the options returned are single-leg trips - where a single train takes you directly from the origin to the destination. In general, only departure dates up to 90 days in the future a",
@@ -1463,11 +1463,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "75afdff9bfdf226c0900738844b15dc4",
+            "id": "28b06774ffdde64e62bf32cf522f8ebd",
             "name": "Get Travel Intelligence Flight Traffic",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-intelligence\/flight-traffic",
             "description": "The Flight Traffic API lets you find the origin and destination traffic summary between two journey points over a specified period.\nThe search returns number of flights & travelers for each origin and destination, ordered by popularity, for each month specified within the search period. This search can help you answer questions like \"Where are people from Los Angeles traveling to between January and April of 2015?\" or \"Which is the most popular month for New Yorkers to travel last year?\". \nThis ",
@@ -1515,11 +1515,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "d23ba2f1db198dadb4220bc208999f2b",
+            "id": "e41506f7a11324beea1286f9159b7780",
             "name": "Get Travel Intelligence Top Destinations",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-intelligence\/top-destinations",
             "description": "The Top Flight Destinations API lets you find the most popular flight destinations from an origin during a period. This can help you answer questions like \"Where are most people from Paris going to during the month of September?\" The API is based on estimated flight traffic summary data from two journey points over a specific period. It returns up to 50 results, ordered by popularity, showing number of travelers as well as number of flights.\n\nThis estimated search is based on Amadeus' Travel Int",
@@ -1560,11 +1560,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "561749a99fa8630385017770a948c4df",
+            "id": "4ad0e4607501cd6315de41770bac4a87",
             "name": "Get Travel Intelligence Top Searches",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-intelligence\/top-searches",
             "description": "The Top Flight Search allows you to find number of estimated searches from an origin, optionally a destination, within a time period when travelers are performing the searches. \nThe search is based on queries performed from within a country (also refers to as market) and returns up to 50 results, ordered by popularity, showing number of searches for most searched destination with its previous year comparison. This search also shows patterns on how travelers are searching for flights, revealing w",
@@ -1619,11 +1619,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         },
         {
-            "id": "6692121149fecace87be17a9d1c11df0",
+            "id": "e5557004d1bf78002a96ca9d899f5e88",
             "name": "Get Travel Record Record Locator",
             "url": "httpsapi.sandbox.amadeus.com\/v1.2\/travel-record\/{record_locator}",
             "description": "Note: This API requires the use of HTTPS\n\nThis service retrieves a travel record (also sometimes referred to as a PNR) for a given journey when provided with Record Locator to identify a travel record, along with the last name of any traveler who is marked as a passenger on this record.\n\nThe API provides detailed information on a given record, including any air, car, hotel or rail reservations, as well as passenger details, and contact frequent traveler information for each passenger when availa",
@@ -1664,7 +1664,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8ca76b5a1912c0cf90d13b4af0835979",
+            "collectionId": "98e65694edbcc319b161f644e388234e",
             "rawModeData": ""
         }
     ]
